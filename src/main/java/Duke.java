@@ -12,7 +12,7 @@ public class Duke {
         System.out.println("What can I do for you?");
         Scanner input = new Scanner(System.in);
 
-        ArrayList<String> taskList = new ArrayList<String>();
+        ArrayList<Task> taskList = new ArrayList<Task>();
         int taskNumber = 0;
         while (true) {
             String userInput;
@@ -23,17 +23,27 @@ public class Duke {
                 break;
             }
 
-            else if (userInput.equals("list")){
-                for(int i = 0; i < taskNumber; i++){
-                    System.out.println((i + 1) + ". " + taskList.get(i));
-
+            else if (userInput.equals("list")) {
+                for (int i = 0; i < taskNumber; i++) {
+                    Task task = taskList.get(i);
+                    System.out.println((i + 1) + ". " + "[" + task.getStatusIcon() + "]" + task.description);
                 }
             }
-            else{
-                taskNumber++;
-                taskList.add(userInput);
-                System.out.println("added: " + userInput);
+
+            else if (userInput.startsWith("Done")) {
+                    int num = userInput.charAt((userInput.length()) - 1) - '0';
+                    Task t = taskList.get(num - 1);
+                    t.markAsDone();
+                    System.out.println("Nice! I've marked this task as done: \n");
+                    System.out.println("[" + t.getStatusIcon() + "]" + t.description);
+            }
+
+            else {
+                    taskNumber++;
+                    Task t = new Task(userInput);
+                    taskList.add(t);
+                    System.out.println("added: " + userInput);
+                }
             }
         }
-    }
 }
