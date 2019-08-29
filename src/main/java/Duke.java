@@ -58,6 +58,6 @@ public class Duke {
                 System.out.println(longDash);
             }
         }
-
+        System.println("commit test");
     }
 }
