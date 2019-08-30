@@ -1,5 +1,4 @@
 T | 1 | read book
-T | 1 | abc
-D | 0 | homework | tmr
 E | 0 | abc | 1am
-E | 1 | abc | 2pm
+D | 0 | abc | 02-12-2019 1800
+
