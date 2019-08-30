@@ -12,4 +12,13 @@ public class Todo extends Task {
     public char type(){
         return 'T';
     }
+
+    @Override
+    public String writeToFile(){
+        if (super.isDone()) {
+            return type() + " | 1 | "  +  super.getDescription();
+        } else {
+            return type() + " | 0 | "  +  super.getDescription();
+        }
+    }
 }

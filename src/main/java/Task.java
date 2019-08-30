@@ -1,4 +1,4 @@
-public class Task {
+public abstract class Task {
 
     protected String description;
     protected boolean isDone;
@@ -6,6 +6,10 @@ public class Task {
     public Task(String description){
         this.description = description;
         this.isDone = false;
+    }
+
+    public boolean isDone(){
+        return isDone;
     }
 
     public void markAsDone(){
@@ -19,4 +23,12 @@ public class Task {
     public String toString() {
         return "[" + this.getStatusIcon() + "] " + this.description;
     }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public abstract char type();
+
+    public abstract String writeToFile();
 }

@@ -11,7 +11,18 @@ public class Event extends Task {
         return "[E]" + super.toString() + " (at: " + at + ")";
     }
 
+    @Override
     public char type(){
         return 'E';
     }
+    @Override
+    public String writeToFile(){
+        if (super.isDone()) {
+            return type() + " | 1 | "  +  super.getDescription() + " | " + at;
+        } else {
+            return type() + " | 0 | "  +  super.getDescription() + " | " + at;
+        }
+    }
+
+
 }

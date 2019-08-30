@@ -16,6 +16,11 @@ public class Duke {
 
         ArrayList<Task> taskList = readTask();
 
+        for (int i = 0; taskList.size() < i; i++) {
+            Task t = taskList.get(i);
+            System.out.println((i + 1) + ". " + t.toString());
+        }
+
         while (true) {
             String userInput = input.nextLine();
 
@@ -28,7 +33,7 @@ public class Duke {
                     int taskIndex = Integer.parseInt(textList[1]) - 1;
                     Task t = taskList.get(taskIndex);
                     t.markAsDone();
-//                    writeTask(taskList);
+                    writeTask(taskList);
                     System.out.println("Nice! I've marked this task as done: \n");
                     System.out.println("[" + t.getStatusIcon() + "]" + t.description);
                 } else if (userInput.equals("list")) {
@@ -64,7 +69,7 @@ public class Duke {
                         }
                         Todo todo = new Todo(textArr[1]);
                         taskList.add(todo);
-//                        writeTask(taskList);
+                        writeTask(taskList);
                     }
 
                     System.out.println(longDash);
@@ -87,16 +92,23 @@ public class Duke {
 
     public static ArrayList readTask() {
         System.out.println("Reading Task List ... \n");
-
-        File file = new File("data\\duke.txt");
         ArrayList<Task> taskList = new ArrayList<Task>();
 
+        File file = new File("data\\duke.txt");
+        System.out.println("file read");
         try {
+            System.out.println("line reading 0");
             Scanner scanner = new Scanner(file);
+            System.out.println("line reading 1");
 
             while (scanner.hasNextLine()) {
-
+                System.out.println("line reading");
                 String[] data = scanner.nextLine().split(" \\| ", 4);
+
+                //debugging
+                for (int i = 0; i < 4; i++){
+                    System.out.println(data[i]);
+                }
 
                 if (data[0].equals("T")) {
                     Todo todo = new Todo(data[2]);
@@ -112,33 +124,37 @@ public class Duke {
                     taskList.add(event);
                 }
             }
-        } catch(FileNotFoundException error) {
-            System.out.println("There is no file to read. File will be created when there is new records.\n");
+        } catch (FileNotFoundException error) {
+            System.out.println("There is a read error\n");
         }
         return taskList;
     }
 
-//    public static void writeTask(ArrayList<Task> taskList) {
-//        File file = new File("data\\duke.txt");
-//        PrintWriter writeIn = new PrintWriter(file);
-//        for (int i = 0; i < taskList.size(); i++) {
-//            int status = 0;
-//            if (taskList.get(i).isDone()){
-//                status = 1;
-//            }
-//
-//            if (taskList.get(i).type() == 'T'){
-//                writeIn.println("T | " + status + " | " + taskList.description);
-//            }
-//
-//            else if (taskList.get(i).type() == 'D'){
-//                writeIn.println("T | " + status + " | " + taskList.description + " | " + taskList.by);
-//            }
-//
-//            else if (taskList.get(i).type() == 'E'){
-//                writeIn.println("T | " + status + " | " + taskList.description);
-//            }
-//        }
-//        output.close();
-//    }
+    public static void writeTask(ArrayList<Task> taskList) {
+        File file = new File("data\\duke.txt");
+
+        try {
+            PrintWriter writeIn = new PrintWriter(file);
+            for (int i = 0; i < taskList.size(); i++) {
+                int status = 0;
+
+                Task task = taskList.get(i);
+                if (task.isDone()) {
+                    status = 1;
+                }
+
+                if (task.type() == 'D') {
+                    writeIn.println(task.writeToFile());
+                }
+//                else if (taskList.get(i).type() == 'E') {
+//                    writeIn.println("T | " + status + " | " + taskList.description + " | " + taskList.by);
+//                } else if (taskList.get(i).type() == 'T') {
+//                    writeIn.println("T | " + status + " | " + taskList.description);
+//                }
+                writeIn.close();
+            }
+        } catch(FileNotFoundException e){
+            System.out.println("There is a write error\n");
+        }
+    }
 }
