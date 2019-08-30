@@ -16,10 +16,7 @@ public class Duke {
 
         ArrayList<Task> taskList = readTask();
 
-        for (int i = 0; taskList.size() < i; i++) {
-            Task t = taskList.get(i);
-            System.out.println((i + 1) + ". " + t.toString());
-        }
+        System.out.println("tasklist size: " + taskList.size());
 
         while (true) {
             String userInput = input.nextLine();
@@ -38,7 +35,7 @@ public class Duke {
                     System.out.println("[" + t.getStatusIcon() + "]" + t.description);
                 } else if (userInput.equals("list")) {
                     System.out.println(longDash + "\n" + "Here are the tasks in your list:");
-                    for (int i = 0; taskList.size() < i; i++) {
+                    for (int i = 0; i < taskList.size(); i++) {
                         Task t = taskList.get(i);
                         System.out.println((i + 1) + ". " + t.toString());
                     }
@@ -69,9 +66,9 @@ public class Duke {
                         }
                         Todo todo = new Todo(textArr[1]);
                         taskList.add(todo);
-                        writeTask(taskList);
                     }
 
+                    writeTask(taskList);
                     System.out.println(longDash);
                     System.out.println("Got it. I've added this task: \n");
                     System.out.println(taskList.get(taskList.size() - 1).toString());
@@ -95,21 +92,11 @@ public class Duke {
         ArrayList<Task> taskList = new ArrayList<Task>();
 
         File file = new File("data\\duke.txt");
-        System.out.println("file read");
         try {
-            System.out.println("line reading 0");
             Scanner scanner = new Scanner(file);
-            System.out.println("line reading 1");
 
             while (scanner.hasNextLine()) {
-                System.out.println("line reading");
                 String[] data = scanner.nextLine().split(" \\| ", 4);
-
-                //debugging
-                for (int i = 0; i < 4; i++){
-                    System.out.println(data[i]);
-                }
-
                 if (data[0].equals("T")) {
                     Todo todo = new Todo(data[2]);
                     if (data[1].equals("1")) todo.markAsDone();
@@ -127,6 +114,7 @@ public class Duke {
         } catch (FileNotFoundException error) {
             System.out.println("There is a read error\n");
         }
+
         return taskList;
     }
 
@@ -143,17 +131,10 @@ public class Duke {
                     status = 1;
                 }
 
-                if (task.type() == 'D') {
-                    writeIn.println(task.writeToFile());
-                }
-//                else if (taskList.get(i).type() == 'E') {
-//                    writeIn.println("T | " + status + " | " + taskList.description + " | " + taskList.by);
-//                } else if (taskList.get(i).type() == 'T') {
-//                    writeIn.println("T | " + status + " | " + taskList.description);
-//                }
-                writeIn.close();
+                writeIn.println(task.writeToFile());
             }
-        } catch(FileNotFoundException e){
+            writeIn.close();
+        } catch (FileNotFoundException e) {
             System.out.println("There is a write error\n");
         }
     }
