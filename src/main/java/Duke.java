@@ -40,6 +40,15 @@ public class Duke {
                         Task t = taskList.get(i);
                         System.out.println((i + 1) + ". " + t.toString());
                     }
+                } else if (userInput.startsWith("delete")) {
+                    String[] textList = userInput.split(" ");
+                    int taskIndex = Integer.parseInt(textList[1]) - 1;
+                    String tStatus = taskList.get(taskIndex).getStatusIcon();
+                    String tDescription = taskList.get(taskIndex).description;
+                    taskList.remove(taskIndex);
+                    writeTask(taskList);
+                    System.out.println("Noted. I've removed this task: \n");
+                    System.out.println("[" + tStatus + "]" + tDescription);
                 } else if (userInput.startsWith("Deadline") || userInput.startsWith("Event") || userInput.startsWith("Todo")) {
                     String[] textArr = userInput.split(" ", 2);
 
