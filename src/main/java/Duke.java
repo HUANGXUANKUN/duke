@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 
 public class Duke {
@@ -47,8 +48,10 @@ public class Duke {
                     } else {
                         System.out.println(longDash + "\nHere are the matching tasks in your list: \n");
                         for (int i = 0, j = 1; i < taskList.size(); i++) {
-                            if (taskList.get(i).description.contains(textArr[1])) {
-                                System.out.println(j + ". " + taskList.get(i).toString());
+                            Task t = taskList.get(i);
+                            boolean isFound = Arrays.asList(t.description.toLowerCase().split(" ")).contains(textArr[1].toLowerCase());
+                            if (isFound) {
+                                System.out.println(j + ". " + t.toString());
                                 j++;
                             }
                         }
@@ -56,12 +59,10 @@ public class Duke {
                 } else if (userInput.startsWith("delete")) {
                     String[] textList = userInput.split(" ");
                     int taskIndex = Integer.parseInt(textList[1]) - 1;
-                    String tStatus = taskList.get(taskIndex).getStatusIcon();
-                    String tDescription = taskList.get(taskIndex).description;
+                    System.out.println("Noted. I've removed this task: \n");
+                    System.out.println(taskList.get(taskIndex).toString());
                     taskList.remove(taskIndex);
                     writeTask(taskList);
-                    System.out.println("Noted. I've removed this task: \n");
-                    System.out.println("[" + tStatus + "]" + tDescription);
                 } else if (userInput.startsWith("Deadline") || userInput.startsWith("Event") || userInput.startsWith("Todo")) {
                     String[] textArr = userInput.split(" ", 2);
 
