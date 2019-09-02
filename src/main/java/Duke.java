@@ -31,14 +31,28 @@ public class Duke {
                     int taskIndex = Integer.parseInt(textList[1]) - 1;
                     Task t = taskList.get(taskIndex);
                     t.markAsDone();
-                    writeTask(taskList);
                     System.out.println("Nice! I've marked this task as done: \n");
-                    System.out.println("[" + t.getStatusIcon() + "]" + t.description);
+                    System.out.println(t.toString());
+                    writeTask(taskList);
                 } else if (userInput.equals("list")) {
                     System.out.println(longDash + "\n" + "Here are the tasks in your list:");
                     for (int i = 0; i < taskList.size(); i++) {
                         Task t = taskList.get(i);
                         System.out.println((i + 1) + ". " + t.toString());
+                    }
+                } else if (userInput.startsWith("find")) {
+                    String[] textArr = userInput.split(" ");
+                    if(textArr.length != 2 || textArr[1].isEmpty()){
+                        throw new DukeException("☹ OOPS!!! Please enter a non-empty keyword\n");
+                    }
+                    else{
+                        System.out.println(longDash + "\nHere are the matching tasks in your list: \n");
+                        for (int i = 0, j = 1; i < taskList.size(); i++) {
+                            if(taskList.get(i).description.contains(textArr[1])){
+                                System.out.println(j + ". " + taskList.get(i).toString());
+                                j++;
+                            }
+                        }
                     }
                 } else if (userInput.startsWith("Deadline") || userInput.startsWith("Event") || userInput.startsWith("Todo")) {
                     String[] textArr = userInput.split(" ", 2);

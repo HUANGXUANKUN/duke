@@ -1,4 +1,3 @@
-T | 1 | read book
 E | 0 | abc | 1am
 D | 0 | abc | 02-12-2019 1800
-
+D | 0 | i love u | 8th June
