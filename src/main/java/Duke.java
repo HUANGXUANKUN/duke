@@ -42,18 +42,26 @@ public class Duke {
                     }
                 } else if (userInput.startsWith("find")) {
                     String[] textArr = userInput.split(" ");
-                    if(textArr.length != 2 || textArr[1].isEmpty()){
+                    if (textArr.length != 2 || textArr[1].isEmpty()) {
                         throw new DukeException("☹ OOPS!!! Please enter a non-empty keyword\n");
-                    }
-                    else{
+                    } else {
                         System.out.println(longDash + "\nHere are the matching tasks in your list: \n");
                         for (int i = 0, j = 1; i < taskList.size(); i++) {
-                            if(taskList.get(i).description.contains(textArr[1])){
+                            if (taskList.get(i).description.contains(textArr[1])) {
                                 System.out.println(j + ". " + taskList.get(i).toString());
                                 j++;
                             }
                         }
                     }
+                } else if (userInput.startsWith("delete")) {
+                    String[] textList = userInput.split(" ");
+                    int taskIndex = Integer.parseInt(textList[1]) - 1;
+                    String tStatus = taskList.get(taskIndex).getStatusIcon();
+                    String tDescription = taskList.get(taskIndex).description;
+                    taskList.remove(taskIndex);
+                    writeTask(taskList);
+                    System.out.println("Noted. I've removed this task: \n");
+                    System.out.println("[" + tStatus + "]" + tDescription);
                 } else if (userInput.startsWith("Deadline") || userInput.startsWith("Event") || userInput.startsWith("Todo")) {
                     String[] textArr = userInput.split(" ", 2);
 
