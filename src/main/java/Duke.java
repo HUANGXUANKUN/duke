@@ -1,11 +1,5 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.Arrays;
-
+import java.util.*;
+import java.io.*;
 
 public class Duke {
 
@@ -13,12 +7,8 @@ public class Duke {
         Scanner input = new Scanner(System.in);
         String greeting = "Hello from I'm Duke\n" +
                 "What can I do for you?";
-        String longDash = "_______________________________";
         System.out.println(greeting);
-
         ArrayList<Task> taskList = readTask();
-
-        System.out.println("tasklist size: " + taskList.size());
 
         while (true) {
             String userInput = input.nextLine();
@@ -32,11 +22,11 @@ public class Duke {
                     int taskIndex = Integer.parseInt(textList[1]) - 1;
                     Task t = taskList.get(taskIndex);
                     t.markAsDone();
-                    System.out.println("Nice! I've marked this task as done: \n");
+                    System.out.println("Nice! I've marked this task as done:");
                     System.out.println(t.toString());
                     writeTask(taskList);
                 } else if (userInput.equals("list")) {
-                    System.out.println(longDash + "\n" + "Here are the tasks in your list:");
+                    System.out.println("Here are the tasks in your list:");
                     for (int i = 0; i < taskList.size(); i++) {
                         Task t = taskList.get(i);
                         System.out.println((i + 1) + ". " + t.toString());
@@ -44,9 +34,9 @@ public class Duke {
                 } else if (userInput.startsWith("find")) {
                     String[] textArr = userInput.split(" ");
                     if (textArr.length != 2 || textArr[1].isEmpty()) {
-                        throw new DukeException("☹ OOPS!!! Please enter a non-empty keyword\n");
+                        throw new DukeException("☹ OOPS!!! Please enter a non-empty keyword");
                     } else {
-                        System.out.println(longDash + "\nHere are the matching tasks in your list: \n");
+                        System.out.println("Here are the matching tasks in your list:");
                         for (int i = 0, j = 1; i < taskList.size(); i++) {
                             Task t = taskList.get(i);
                             boolean isFound = Arrays.asList(t.description.toLowerCase().split(" ")).contains(textArr[1].toLowerCase());
@@ -59,60 +49,58 @@ public class Duke {
                 } else if (userInput.startsWith("delete")) {
                     String[] textList = userInput.split(" ");
                     int taskIndex = Integer.parseInt(textList[1]) - 1;
-                    System.out.println("Noted. I've removed this task: \n");
+                    System.out.println("Noted. I've removed this task:");
                     System.out.println(taskList.get(taskIndex).toString());
                     taskList.remove(taskIndex);
                     writeTask(taskList);
-                } else if (userInput.startsWith("Deadline") || userInput.startsWith("Event") || userInput.startsWith("Todo")) {
+                } else if (userInput.startsWith("deadline") || userInput.startsWith("event") || userInput.startsWith("todo")) {
                     String[] textArr = userInput.split(" ", 2);
 
-                    if (userInput.startsWith("Deadline")) {
+                    if (userInput.startsWith("deadline")) {
                         String[] contentArr = textArr[1].split(" /by ");
                         String description = contentArr[0];
                         if (description.replaceAll("\\s+", "").isEmpty()) {
-                            throw new DukeException("☹ OOPS!!! The description of a Deadline cannot be empty.\n");
+                            throw new DukeException("☹ OOPS!!! The description of a Deadline cannot be empty.");
                         }
                         String by = contentArr[1];
                         Deadline deadline = new Deadline(description, by);
                         taskList.add(deadline);
-                    } else if (userInput.startsWith("Event")) {
+                    } else if (userInput.startsWith("event")) {
                         String[] contentArr = textArr[1].split(" /at ");
                         String description = contentArr[0];
                         if (description.replaceAll("\\s+", "").isEmpty()) {
-                            throw new DukeException("☹ OOPS!!! The description of a Event cannot be empty.\n");
+                            throw new DukeException("☹ OOPS!!! The description of a Event cannot be empty.");
                         }
                         String at = contentArr[1];
                         Event event = new Event(description, at);
                         taskList.add(event);
                     } else {
                         if (textArr[1].replaceAll("\\s+", "").isEmpty()) {
-                            throw new DukeException("☹ OOPS!!! The description of a Todo cannot be empty.\n");
+                            throw new DukeException("☹ OOPS!!! The description of a Todo cannot be empty.");
                         }
                         Todo todo = new Todo(textArr[1]);
                         taskList.add(todo);
                     }
 
                     writeTask(taskList);
-                    System.out.println(longDash);
-                    System.out.println("Got it. I've added this task: \n");
+                    System.out.println("Got it. I've added this task: ");
                     System.out.println(taskList.get(taskList.size() - 1).toString());
                     System.out.println("Now you have " + taskList.size() + " tasks in the list.");
-                    System.out.println(longDash);
                 } else {
-                    System.out.println(" ☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
+                    System.out.println("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
             } catch (DukeException e) {
                 System.out.println(e);
                 continue;
             } catch (Exception e) {
-                System.out.println(" ☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
+                System.out.println("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 continue;
             }
         }
     }
 
     public static ArrayList readTask() {
-        System.out.println("Reading Task List ... \n");
+        System.out.println("Reading Task List ...");
         ArrayList<Task> taskList = new ArrayList<Task>();
 
         File file = new File("data\\duke.txt");
@@ -135,8 +123,9 @@ public class Duke {
                     taskList.add(event);
                 }
             }
+            System.out.println("Loading of task list is completed");
         } catch (FileNotFoundException error) {
-            System.out.println("There is a read error\n");
+            System.out.println("There is a loading error");
         }
 
         return taskList;
@@ -159,7 +148,7 @@ public class Duke {
             }
             writeIn.close();
         } catch (FileNotFoundException e) {
-            System.out.println("There is a write error\n");
+            System.out.println("There is a write error");
         }
     }
 }

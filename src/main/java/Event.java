@@ -16,13 +16,13 @@ public class Event extends Task {
     }
 
     public String convertToDateAndTime(String at) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HHmm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
         try {
             LocalDateTime dateTime = LocalDateTime.parse(at, formatter);
             formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             return formatter.format(dateTime);
         } catch (DateTimeParseException error) {
-            System.out.println("Data and Time are not in proper format\n");
+            System.out.println("Data and Time are not in dd/MM/yyyy HHmm format");
             return at;
         }
     }

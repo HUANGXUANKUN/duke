@@ -5,7 +5,6 @@ import java.time.format.DateTimeParseException;
 public class Deadline extends Task {
 
     protected String by;
-
     public Deadline(String description, String by) {
         super(description);
         this.by = convertToDateAndTime(by);
@@ -28,7 +27,7 @@ public class Deadline extends Task {
             formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             return formatter.format(dateTime);
         } catch (DateTimeParseException error) {
-            System.out.println("Data and Time are not in proper format\n");
+            System.out.println("Data and Time are not in dd/MM/yyyy HHmm format");
             return at;
         }
     }
