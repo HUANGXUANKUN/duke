@@ -1,4 +1,4 @@
-T | 0 | book review
+T | 0 | read book
 D | 1 | send Email | weekend
 E | 1 | return books | tomorrow 5pm
 E | 0 | Project Meeting | Thursday 2pm

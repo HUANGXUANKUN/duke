@@ -27,7 +27,6 @@ public class Deadline extends Task {
             formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             return formatter.format(dateTime);
         } catch (DateTimeParseException error) {
-            System.out.println("Data and Time are not in dd/MM/yyyy HHmm format");
             return at;
         }
     }
