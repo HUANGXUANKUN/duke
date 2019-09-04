@@ -1,7 +1,5 @@
 /**
- * Represents a command to list all existing tasks in the task list. The
- * <code>ListCommand</code> class inherits from the <code>Command</code> class
- * to represent user instruction to display all existing tasks in the task list.
+ * Represents a command to list all task stored in taskList.
  */
 public class ListCommand extends Command {
     /**
@@ -23,8 +21,8 @@ public class ListCommand extends Command {
     /**
      * @param tasklist The Tasklist containing tasks.
      * @param ui The Duke UI system interacting with user.
-            * @param storage The Storage handles read/write of data from hard disk.
-            * @throws DukeException If an exception occurs during execution of the
+     * @param storage The Storage handles read/write of data from hard disk.
+     * @throws DukeException If an exception occurs during execution of the
      *      command.
      *
      */

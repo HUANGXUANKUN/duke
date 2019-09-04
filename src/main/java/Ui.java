@@ -48,7 +48,7 @@ public class Ui {
      * Shows that a Task is added to the task list, and then displays
      * that task and the number of tasks in task list.
      *
-     * @param t    The <code>Task</code> that is added to the list.
+     * @param t  The <code>Task</code> that is added to the list.
      * @param size The number of tasks stored in the <code>TaskList</code>.
      */
     public void showTaskAdded(Task t, int taskListSize) {
@@ -104,7 +104,7 @@ public class Ui {
      * Shows search results for finding a keyword in the task list. Displays
      * all tasks that contain the keyword.
      *
-     * @param tasks   The <code>TaskList</code> where keyword is searched.
+     * @param taskList  The TaskList where keyword is searched.
      * @param keyword A string representation of the keyword.
      */
     public void showFoundResult(TaskList taskList, String keyword) {

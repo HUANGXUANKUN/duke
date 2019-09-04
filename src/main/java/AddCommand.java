@@ -17,9 +17,7 @@ public class AddCommand extends Command {
     /**
      * Indicates whether this command tells Duke to exit.
      *
-     * @return A boolean. True if the command tells Duke to exit, false
-     * otherwise. Since the <code>AddCommand</code> is not a "bye",
-     * the return value is set to false.
+     * @return A boolean value false.
      */
     @Override
     public boolean isExit() {
