@@ -1,3 +1,5 @@
+package core;
+
 /**
  * Exception that is related to Duke
  */

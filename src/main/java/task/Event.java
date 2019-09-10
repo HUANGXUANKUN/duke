@@ -1,23 +1,20 @@
+package task;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class Deadline extends Task {
+public class Event extends Task {
 
-    protected String by;
-    public Deadline(String description, String by) {
+    protected String at;
+
+    public Event(String description, String at) {
         super(description);
-        this.by = convertToDateAndTime(by);
+        this.at = convertToDateAndTime(at);
     }
 
-    @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by + ")";
-    }
-
-    @Override
-    public char type(){
-        return 'D';
+        return "[E]" + super.toString() + " (at: " + at + ")";
     }
 
     public String convertToDateAndTime(String at) {
@@ -32,13 +29,16 @@ public class Deadline extends Task {
     }
 
     @Override
-    public String writeToFile() {
-        if (super.isDone()) {
-            return type() + " | 1 | "  +  super.getDescription() + " | " + by;
-        } else {
-            return type() + " | 0 | "  +  super.getDescription() + " | " + by;
-        }
+    public char type() {
+        return 'E';
     }
 
-
+    @Override
+    public String writeToFile() {
+        if (super.isDone()) {
+            return type() + " | 1 | " + super.getDescription() + " | " + at;
+        } else {
+            return type() + " | 0 | " + super.getDescription() + " | " + at;
+        }
+    }
 }

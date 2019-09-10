@@ -1,4 +1,9 @@
-import java.util.*;
+package core;
+
+import task.Task;
+
+import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * The UI system that provides conversation with user.
@@ -45,11 +50,11 @@ public class Ui {
     }
 
     /**
-     * Shows that a Task is added to the task list, and then displays
+     * Shows that a task.Task is added to the task list, and then displays
      * that task and the number of tasks in task list.
      *
-     * @param t  The <code>Task</code> that is added to the list.
-     * @param size The number of tasks stored in the <code>TaskList</code>.
+     * @param t  The <code>task.Task</code> that is added to the list.
+     * @param size The number of tasks stored in the <code>core.TaskList</code>.
      */
     public void showTaskAdded(Task t, int taskListSize) {
         System.out.println("Got it. I've added this task: ");
@@ -67,9 +72,9 @@ public class Ui {
     }
 
     /**
-     * Show the message of a Task that has been marked as 'done'.
+     * Show the message of a task.Task that has been marked as 'done'.
      *
-     * @param t A Task that has its status marked as 'done'.
+     * @param t A task.Task that has its status marked as 'done'.
      */
     public void markedAsDone(Task t) {
         System.out.println("Nice! I've marked this task as done: \n  " + t);
@@ -78,8 +83,8 @@ public class Ui {
     /**
      * Shows the removed task and the current number of tasks in the task list
      *
-     * @param t            The Task that is removed from the task list
-     * @param taskListSize the size of the task list which the Task t is being
+     * @param t            The task.Task that is removed from the task list
+     * @param taskListSize the size of the task list which the task.Task t is being
      *                     removed from.
      */
     public void showRemovedTask(Task t, int taskListSize) {
@@ -91,7 +96,7 @@ public class Ui {
     /**
      * Displays all tasks in the taskList.
      *
-     * @param taskList The TaskList that contains all the tasks
+     * @param taskList The core.TaskList that contains all the tasks
      */
     public void showTaskList(TaskList taskList) {
         System.out.println("Here are the tasks in your list:");
@@ -104,7 +109,7 @@ public class Ui {
      * Shows search results for finding a keyword in the task list. Displays
      * all tasks that contain the keyword.
      *
-     * @param taskList  The TaskList where keyword is searched.
+     * @param taskList  The core.TaskList where keyword is searched.
      * @param keyword A string representation of the keyword.
      */
     public void showFoundResult(TaskList taskList, String keyword) {

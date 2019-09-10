@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import command.Command;
+import core.*;
 
 public class Duke {
     private Storage storage;

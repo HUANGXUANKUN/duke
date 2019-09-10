@@ -1,19 +1,25 @@
-import java.util.Scanner;
-import java.util.ArrayList;
+package core;
+
+import task.Deadline;
+import task.Event;
+import task.Task;
+import task.Todo;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
- * Represents a Storage that perform reading and writing of data
+ * Represents a core.Storage that perform reading and writing of data
  * from hard disk.
  */
 public class Storage {
     private String path;
 
     /**
-     * Constructs a Storage object with a file path.
+     * Constructs a core.Storage object with a file path.
      *
      * @param filePath A string that represents the path of the file
      *                where data is being stored and read from
@@ -23,10 +29,10 @@ public class Storage {
     }
 
     /**
-     * Read the tasks from the file to a ArrayList<Task>
+     * Read the tasks from the file to a ArrayList<task.Task>
      *
      * @return taskList A ArrayList of tasks as recorded in the file.
-     * @throw DukeException A Exception when file is not found.
+     * @throw core.DukeException A Exception when file is not found.
      */
     public ArrayList<Task> loadTasks() throws DukeException {
         ArrayList<Task> taskList = new ArrayList<Task>();
@@ -59,9 +65,9 @@ public class Storage {
     }
 
     /**
-     * Saves tasks from a <code>TaskList</code> to the local file.
+     * Saves tasks from a <code>core.TaskList</code> to the local file.
      *
-     * @param taskList The <code>TaskList</code> storing tasks.
+     * @param taskList The <code>core.TaskList</code> storing tasks.
      * @throws DukeException If writing to the local file failed.
      */
     public void saveTasks(TaskList taskList) throws DukeException {

@@ -1,3 +1,11 @@
+package command;
+
+import core.DukeException;
+import core.Storage;
+import core.TaskList;
+import core.Ui;
+import task.Task;
+
 /**
  * Represents a command to delete a task.
  */
@@ -6,7 +14,7 @@ public class DeleteCommand extends Command {
     private int Id;
 
     /**
-     * Constructs a <code>DeleteCommand</code> object.
+     * Constructs a <code>command.DeleteCommand</code> object.
      *
      * @param Id Specifies the index of the task to be deleted.
      */
@@ -30,7 +38,7 @@ public class DeleteCommand extends Command {
      *
      * @param taskList The Tasklist containing tasks
      * @param ui The Duke UI system interacting with user
-     * @param storage The Storage handles read/write of data from hard disk
+     * @param storage The core.Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the
      *      command.
      */

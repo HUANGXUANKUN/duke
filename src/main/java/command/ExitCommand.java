@@ -1,3 +1,10 @@
+package command;
+
+import core.DukeException;
+import core.Storage;
+import core.TaskList;
+import core.Ui;
+
 /**
  * Represents a command to exit Duke.
  */
@@ -21,7 +28,7 @@ public class ExitCommand extends Command {
      *
      * @param taskList containing tasks
      * @param ui The Duke UI system interacts with user
-     * @param storage The Storage handles read/write of data from hard disk
+     * @param storage The core.Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the
      *      command.
      */

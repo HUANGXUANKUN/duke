@@ -1,4 +1,8 @@
-import java.util.*;
+package core;
+
+import task.Task;
+
+import java.util.ArrayList;
 
 /**
  * It serves as a container of tasks.Can perform various operating
@@ -9,14 +13,14 @@ public class TaskList {
     private ArrayList<Task> taskList;
 
     /**
-     * Constructs a new TaskList with a default empty list.
+     * Constructs a new core.TaskList with a default empty list.
      */
     public TaskList() {
         taskList = new ArrayList<>();
     }
 
     /**
-     * Constructor that takes in a ArrayList<Task>
+     * Constructor that takes in a ArrayList<task.Task>
      *
      * @param taskList An existing ArrayList of tasks.
      */
@@ -36,17 +40,17 @@ public class TaskList {
     /**
      * A getter. To return task from taskList with given index
      *
-     * @param An integer representing the index of the Task .
-     * @return The Task in the list with this specific index.
+     * @param An integer representing the index of the task.Task .
+     * @return The task.Task in the list with this specific index.
      */
     public Task getTask(int i) {
         return taskList.get(i);
     }
 
     /**
-     * An Adder. To add the argument Task to the taskList.
+     * An Adder. To add the argument task.Task to the taskList.
      *
-     * @param t The Task to be added to the list.
+     * @param t The task.Task to be added to the list.
      */
     public void addTask(Task t) {
         taskList.add(t);

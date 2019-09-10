@@ -1,3 +1,10 @@
+package command;
+
+import core.DukeException;
+import core.Storage;
+import core.TaskList;
+import core.Ui;
+
 /**
  * Represents a command to find if any task with specific
  * keyword exists in the taskList.
@@ -7,7 +14,7 @@ public class FindCommand extends Command {
     private String keyword;
 
     /**
-     * Constructor of a FindCommand class. Take in a keyword to find
+     * Constructor of a command.FindCommand class. Take in a keyword to find
      * if the task exists in the taskList.
      *
      * @param keyword Specifies the keyword for searching.
@@ -32,7 +39,7 @@ public class FindCommand extends Command {
      *
      * @param taskList The Tasklist containing tasks.
      * @param ui The Duke UI system interacting with user.
-     * @param storage The Storage handles read/write of data from hard disk.
+     * @param storage The core.Storage handles read/write of data from hard disk.
      * @throws DukeException If an exception occurs during execution of the
      *      command.
      */

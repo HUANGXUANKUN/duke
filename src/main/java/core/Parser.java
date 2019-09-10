@@ -1,4 +1,12 @@
-import java.util.*;
+package core;
+
+import command.*;
+import task.Deadline;
+import task.Event;
+import task.Task;
+import task.Todo;
+
+import java.util.Arrays;
 
 /**
  * It parses user command into a Duke's understandable commands
@@ -20,10 +28,10 @@ public class Parser {
     }
 
     /**
-     * Parses a Task from a command string
+     * Parses a task.Task from a command string
      *
      * @param words The string array to be parsed.
-     * @return The Task that is parsed from the string array.
+     * @return The task.Task that is parsed from the string array.
      */
     private static Task parseTask(String s) {
         String[] textArr = s.split(" ", 2);
@@ -62,7 +70,7 @@ public class Parser {
             throw new DukeException("OOPS!!! The description of the command " + firstWord + " is empty.");
         }
 
-        // Check if tasks Deadline or Event contains date and time
+        // Check if tasks task.Deadline or task.Event contains date and time
         if ((firstWord.equals("deadline") && !findKeyword(words, "/by"))
                 || (firstWord.equals("event") && !findKeyword(words, "/at"))) {
             throw new DukeException("OOPS!!! The date/time of a " + firstWord + " cannot be empty.");
@@ -75,7 +83,7 @@ public class Parser {
      * Parses a user command into a Duke's understandable command type
      *
      * @param s The string represents user command.
-     * @return A Command that represents the type of command to be executed
+     * @return A command.Command that represents the type of command to be executed
      *
      * @throws A Duke specificed Exception describing the error
      */

@@ -1,6 +1,13 @@
+package command;
+
+import core.DukeException;
+import core.Storage;
+import core.TaskList;
+import core.Ui;
+
 /**
  * Represents a command from user. Abstract class to be
- * implemented by various command classes such as ExitCommand, AddCommand...
+ * implemented by various command classes such as command.ExitCommand, command.AddCommand...
  */
 public abstract class Command {
     /**
@@ -15,7 +22,7 @@ public abstract class Command {
      *
      * @param tasklist The Tasklist containing tasks
      * @param ui The Duke UI system interacting with user
-     * @param storage The Storage handles read/write of data from hard disk
+     * @param storage The core.Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the
      *      command.
      */

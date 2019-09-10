@@ -1,3 +1,11 @@
+package command;
+
+import core.DukeException;
+import core.Storage;
+import core.TaskList;
+import core.Ui;
+import task.Task;
+
 /**
  * Represents a command to add a task.
  */
@@ -5,7 +13,7 @@ public class AddCommand extends Command {
     private Task task;
 
     /**
-     * Constructer of AddCommand class
+     * Constructer of command.AddCommand class
      *
      * @param task Specifies the task to be added.
      */
@@ -29,7 +37,7 @@ public class AddCommand extends Command {
      *
      * @param tasklist The Tasklist containing tasks
      * @param ui       The Duke UI system interacting with user
-     * @param storage  The Storage handles read/write of data from hard disk
+     * @param storage  The core.Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the
      *                       command.
      */
