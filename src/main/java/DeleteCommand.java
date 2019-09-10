@@ -8,7 +8,7 @@ public class DeleteCommand extends Command {
     /**
      * Constructs a <code>DeleteCommand</code> object.
      *
-     * @param taskId Specifies the index of the task to be deleted.
+     * @param Id Specifies the index of the task to be deleted.
      */
     public DeleteCommand(int Id) {
         super();
@@ -28,7 +28,7 @@ public class DeleteCommand extends Command {
     /**
      * Executes the command with respect to tasks
      *
-     * @param tasklist The Tasklist containing tasks
+     * @param taskList The Tasklist containing tasks
      * @param ui The Duke UI system interacting with user
      * @param storage The Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the

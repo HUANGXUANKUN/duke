@@ -25,8 +25,8 @@ public class Storage {
     /**
      * Read the tasks from the file to a ArrayList<Task>
      *
-     * @return A ArrayList of tasks as recorded in the file.
-     * @throws A DukeException when file is not found.
+     * @return taskList A ArrayList of tasks as recorded in the file.
+     * @throw DukeException A Exception when file is not found.
      */
     public ArrayList<Task> loadTasks() throws DukeException {
         ArrayList<Task> taskList = new ArrayList<Task>();
@@ -61,7 +61,7 @@ public class Storage {
     /**
      * Saves tasks from a <code>TaskList</code> to the local file.
      *
-     * @param tasks The <code>TaskList</code> storing tasks.
+     * @param taskList The <code>TaskList</code> storing tasks.
      * @throws DukeException If writing to the local file failed.
      */
     public void saveTasks(TaskList taskList) throws DukeException {
