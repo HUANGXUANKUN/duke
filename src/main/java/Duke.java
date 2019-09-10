@@ -28,6 +28,7 @@ public class Duke {
 
     public void run() {
         ui.showWelcome();
+//        char degrees = '\u00B0';
         boolean isExit = false;
         while (!isExit) {
             try {
