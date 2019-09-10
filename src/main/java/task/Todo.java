@@ -11,16 +11,12 @@ public class Todo extends Task {
         return "[T]" + super.toString();
     }
 
-    public char type(){
-        return 'T';
-    }
-
     @Override
-    public String writeToFile(){
+    public String getFormat(){
         if (super.isDone()) {
-            return type() + " | 1 | "  +  super.getDescription();
+            return "T | 1 | "  +  super.getDescription();
         } else {
-            return type() + " | 0 | "  +  super.getDescription();
+            return "T | 0 | "  +  super.getDescription();
         }
     }
 }

@@ -17,7 +17,7 @@ public class Parser {
      * Check if the keyword appears in the given string
      *
      * @param stringArr The string array to be inspected.
-     * @param s The string to be searched.
+     * @param keyword The string to be searched.
      * @return A boolean value indicates if the keyword is found in the string array.
      */
     private static boolean findKeyword(String[] stringArr, String keyword) {
@@ -30,7 +30,7 @@ public class Parser {
     /**
      * Parses a task.Task from a command string
      *
-     * @param words The string array to be parsed.
+     * @param s The string array to be parsed.
      * @return The task.Task that is parsed from the string array.
      */
     private static Task parseTask(String s) {
@@ -70,10 +70,10 @@ public class Parser {
             throw new DukeException("OOPS!!! The description of the command " + firstWord + " is empty.");
         }
 
-        // Check if tasks task.Deadline or task.Event contains date and time
+        // Check if tasks task.Deadline or task.Event contains keyword of date and time
         if ((firstWord.equals("deadline") && !findKeyword(words, "/by"))
                 || (firstWord.equals("event") && !findKeyword(words, "/at"))) {
-            throw new DukeException("OOPS!!! The date/time of a " + firstWord + " cannot be empty.");
+            throw new DukeException("OOPS!!! The date/time of a " + firstWord + " is not provided.");
         }
 
 
@@ -85,7 +85,7 @@ public class Parser {
      * @param s The string represents user command.
      * @return A command.Command that represents the type of command to be executed
      *
-     * @throws A Duke specificed Exception describing the error
+     * @throws DukeException Duke-specified Exception describing the error
      */
     public static Command parse(String s) throws DukeException {
         String[] words = s.split(" ");

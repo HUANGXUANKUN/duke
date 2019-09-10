@@ -88,7 +88,7 @@ public class Ui {
      *                     removed from.
      */
     public void showRemovedTask(Task t, int taskListSize) {
-        System.out.println("Noted. I've removed this task:\n");
+        System.out.println("Noted. I've removed this task:");
         System.out.println(t);
         System.out.println("Now you have " + taskListSize + " tasks in the list.");
     }
@@ -117,7 +117,7 @@ public class Ui {
         int i = 0, j = 0;
         for (; i < taskList.getSize(); i++) {
             Task t = taskList.getTask(i);
-            boolean isFound = Arrays.asList(t.description.toLowerCase().split(" ")).contains(keyword.toLowerCase());
+            boolean isFound = Arrays.asList(t.getDescription().toLowerCase().split(" ")).contains(keyword.toLowerCase());
             if (isFound) {
                 System.out.println(j + ". " + t);
                 j++;

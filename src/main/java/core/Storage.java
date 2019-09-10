@@ -21,7 +21,7 @@ public class Storage {
     /**
      * Constructs a core.Storage object with a file path.
      *
-     * @param filePath A string that represents the path of the file
+     * @param path A string that represents the path of the file
      *                where data is being stored and read from
      */
     public Storage(String path) {
@@ -76,7 +76,7 @@ public class Storage {
             PrintWriter writeIn = new PrintWriter(file);
             for (int i = 0; i < taskList.getSize(); i++) {
                 Task task = taskList.getTask(i);
-                writeIn.println(task.writeToFile());
+                writeIn.println(task.getFormat());
             }
             writeIn.close();
         } catch (FileNotFoundException e) {

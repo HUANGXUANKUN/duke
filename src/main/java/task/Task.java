@@ -1,9 +1,13 @@
 package task;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public abstract class Task {
 
-    public String description;
-    protected boolean isDone;
+    private String description;
+    private boolean isDone;
 
     public Task(String description){
         this.description = description;
@@ -14,12 +18,11 @@ public abstract class Task {
         return isDone;
     }
 
-
     public void markAsDone(){
         isDone = true;
     }
 
-    public String getStatusIcon() {
+    private String getStatusIcon() {
         return (isDone ? "Y" : "N");
     }
 
@@ -31,7 +34,10 @@ public abstract class Task {
         return this.description;
     }
 
-    public abstract char type();
-
-    public abstract String writeToFile();
+    /**
+     * Turn the info of the task in proper format to be written in local
+     *
+     * @return A string that contains info of a task.
+     */
+    public abstract String getFormat();
 }

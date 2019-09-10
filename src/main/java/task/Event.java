@@ -1,44 +1,27 @@
 package task;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import core.DateFormatter;
 
 public class Event extends Task {
 
-    protected String at;
+    private String date;
+    private String formatted;
 
     public Event(String description, String at) {
         super(description);
-        this.at = convertToDateAndTime(at);
+        this.date = at;
+        this.formatted = DateFormatter.convertToDateAndTime(at);
     }
 
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + at + ")";
-    }
-
-    public String convertToDateAndTime(String at) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
-        try {
-            LocalDateTime dateTime = LocalDateTime.parse(at, formatter);
-            formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-            return formatter.format(dateTime);
-        } catch (DateTimeParseException error) {
-            return at;
-        }
+        return "[E]" + super.toString() + " (at: " + formatted + ")";
     }
 
     @Override
-    public char type() {
-        return 'E';
-    }
-
-    @Override
-    public String writeToFile() {
+    public String getFormat() {
         if (super.isDone()) {
-            return type() + " | 1 | " + super.getDescription() + " | " + at;
+            return "E | 1 | " + super.getDescription() + " | " + date;
         } else {
-            return type() + " | 0 | " + super.getDescription() + " | " + at;
+            return "E | 0 | " + super.getDescription() + " | " + date;
         }
     }
 }
