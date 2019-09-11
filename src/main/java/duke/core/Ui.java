@@ -12,14 +12,14 @@ public class Ui {
     private Scanner scanner;
 
     /**
-     * Constructer to initialize object UI and allow user to type duke.command
+     * Constructor to initialize object UI and allow user to type duke.command
      */
     public Ui() {
         scanner = new Scanner(System.in);
     }
 
     /**
-     * Shows Greating message
+     * Shows Greeting message
      */
     public void showWelcome() {
         String greeting = "Hello from I'm duke.Duke\n" + "What can I do for you?";

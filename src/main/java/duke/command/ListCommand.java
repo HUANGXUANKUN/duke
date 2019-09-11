@@ -26,7 +26,7 @@ public class ListCommand extends Command {
         return false;
     }
     /**
-     * @param tasklist The Tasklist containing tasks.
+     * @param taskList The Tasklist containing tasks.
      * @param ui The duke.Duke UI system interacting with user.
      * @param storage The duke.core.Storage handles read/write of data from hard disk.
      * @throws DukeException If an exception occurs during execution of the
@@ -34,7 +34,7 @@ public class ListCommand extends Command {
      *
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
-        ui.showTaskList(tasks);
+    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeException {
+        ui.showTaskList(taskList);
     }
 }

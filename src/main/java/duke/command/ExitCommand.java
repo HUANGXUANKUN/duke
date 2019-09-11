@@ -29,8 +29,6 @@ public class ExitCommand extends Command {
      * @param taskList containing tasks
      * @param ui The duke.Duke UI system interacts with user
      * @param storage The duke.core.Storage handles read/write of data from hard disk
-     * @throws DukeException If an exception occurs during execution of the
-     *      duke.command.
      */
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) {

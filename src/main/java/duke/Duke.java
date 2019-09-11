@@ -5,18 +5,23 @@ import duke.core.*;
 
 public class Duke {
     private Storage storage;
-
     private TaskList tasks;
     private Ui ui;
 
     /**
      * Start duke.Duke by passing in a specific file
-     * path where the duke.task data is stored
+     * path where the task data is stored
      */
     public static void main(String[] args) {
         new Duke("data/duke.txt").run();
     }
 
+    /**
+     * Constructor of the main Duke class
+     * Initialize the ui, storage and taskList objects
+     *
+     * @param filePath The relative local path where task data is being stored
+     */
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
@@ -28,6 +33,11 @@ public class Duke {
         }
     }
 
+    /**
+     * Run the program with ui in recursive loop
+     * In each loop, ask the user to input command and execute it.
+     * If the command "bye" is entered by user, exit the program
+     */
     private void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -45,5 +55,4 @@ public class Duke {
             }
         }
     }
-
 }
