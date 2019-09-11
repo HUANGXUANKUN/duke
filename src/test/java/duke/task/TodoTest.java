@@ -6,12 +6,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TodoTest {
+    @Test
+    public void todoStringTest(){
+        assertEquals(new Todo("todoTest").toString(), "[T][N] todoTest", "todo string test fails");
+    }
 
     @Test
-    public void todoTest1(){
+    public void writeFormatTest() {
+        assertEquals( "T | 0 | todoTest",new Todo("todoTest").getFormat(), "The writeToFile format is not expected");
+    }
+
+    @Test
+    public void doneStatusTest() {
+        assertFalse(new Todo("abc").isDone(), "The newly created Deadline should not be done");
+    }
+
+    @Test
+    public void todoTestCase(){
         // Creata a new task and check its toString() and getFormat()
         Todo todo = new Todo("todoTest");
-        assertFalse(todo.isDone(), "The newly created Deadline should not be done");
+        assertFalse(todo.isDone(), "The newly created todo should not be done");
         assertEquals( "[T][N] todoTest",todo.toString(), "The writeToFile format is not expected");
         assertEquals( "T | 0 | todoTest",todo.getFormat(), "The writeToFile format is not expected");
 
