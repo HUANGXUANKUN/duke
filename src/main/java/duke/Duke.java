@@ -9,7 +9,7 @@ public class Duke {
     private Ui ui;
 
     /**
-     * Start duke.Duke by passing in a specific file
+     * Start Duke by passing in a specific file
      * path where the task data is stored
      */
     public static void main(String[] args) {

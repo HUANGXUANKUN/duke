@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Represents a duke.core.Storage that perform reading and writing of data
+ * Represents a Storage that perform reading and writing of data
  * from hard disk.
  */
 public class Storage {
     private String path;
 
     /**
-     * Constructs a duke.core.Storage object with a file path.
+     * Constructs a Storage object with a file path.
      *
      * @param path A string that represents the path of the file
      *                where data is being stored and read from
@@ -29,10 +29,10 @@ public class Storage {
     }
 
     /**
-     * Read the tasks from the file to a ArrayList<duke.task.Task>
+     * Read the tasks from the file to a ArrayList<Task>
      *
      * @return taskList A ArrayList of tasks as recorded in the file.
-     * @throw duke.core.DukeException A Exception when file is not found.
+     * @throw DukeException A Exception when file is not found.
      */
     public ArrayList<Task> loadTasks() throws DukeException {
         ArrayList<Task> taskList = new ArrayList<Task>();
@@ -57,7 +57,7 @@ public class Storage {
                     taskList.add(event);
                 }
             }
-            System.out.println("Loading of duke.task list is completed");
+            System.out.println("Loading of task list is completed");
         } catch (FileNotFoundException error) {
             System.out.println("There is a loading error");
         }
@@ -65,9 +65,9 @@ public class Storage {
     }
 
     /**
-     * Saves tasks from a <code>duke.core.TaskList</code> to the local file.
+     * Saves tasks from a <code>TaskList</code> to the local file.
      *
-     * @param taskList The <code>duke.core.TaskList</code> storing tasks.
+     * @param taskList The <code>TaskList</code> storing tasks.
      * @throws DukeException If writing to the local file failed.
      */
     public void saveTasks(TaskList taskList) throws DukeException {

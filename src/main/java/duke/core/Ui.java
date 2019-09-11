@@ -12,7 +12,7 @@ public class Ui {
     private Scanner scanner;
 
     /**
-     * Constructor to initialize object UI and allow user to type duke.command
+     * Constructor to initialize object UI and allow user to type command
      */
     public Ui() {
         scanner = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Ui {
      * Shows Greeting message
      */
     public void showWelcome() {
-        String greeting = "Hello from I'm duke.Duke\n" + "What can I do for you?";
+        String greeting = "Hello from I'm Duke\n" + "What can I do for you?";
         System.out.println(greeting);
     }
 
@@ -36,7 +36,7 @@ public class Ui {
     /**
      * Reads one line of user instruction.
      *
-     * @return a string of user duke.command
+     * @return a string of user command
      */
     public String readCommand() {
         return scanner.nextLine();
@@ -50,11 +50,11 @@ public class Ui {
     }
 
     /**
-     * Shows that a duke.task.Task is added to the duke.task list, and then displays
-     * that duke.task and the number of tasks in duke.task list.
+     * Shows that a Task is added to the task list, and then displays
+     * that task and the number of tasks in task list.
      *
-     * @param t  The <code>duke.task.Task</code> that is added to the list.
-     * @param size The number of tasks stored in the <code>duke.core.TaskList</code>.
+     * @param t  The task that is added to the list.
+     * @param size The number of tasks stored in the taskList
      */
     public void showTaskAdded(Task t, int taskListSize) {
         System.out.println("Got it. I've added this task: ");
@@ -72,19 +72,19 @@ public class Ui {
     }
 
     /**
-     * Show the message of a duke.task.Task that has been marked as 'done'.
+     * Show the message of a Task that has been marked as 'done'.
      *
-     * @param t A duke.task.Task that has its status marked as 'done'.
+     * @param t A Task that has its status marked as 'done'.
      */
     public void markedAsDone(Task t) {
-        System.out.println("Nice! I've marked this duke.task as done: \n  " + t);
+        System.out.println("Nice! I've marked this task as done: \n  " + t);
     }
 
     /**
-     * Shows the removed duke.task and the current number of tasks in the duke.task list
+     * Shows the removed task and the current number of tasks in the task list
      *
-     * @param t            The duke.task.Task that is removed from the duke.task list
-     * @param taskListSize the size of the duke.task list which the duke.task.Task t is being
+     * @param t            The Task that is removed from the task list
+     * @param taskListSize the size of the task list which the Task t is being
      *                     removed from.
      */
     public void showRemovedTask(Task t, int taskListSize) {
@@ -96,7 +96,7 @@ public class Ui {
     /**
      * Displays all tasks in the taskList.
      *
-     * @param taskList The duke.core.TaskList that contains all the tasks
+     * @param taskList The taskList that contains all the tasks
      */
     public void showTaskList(TaskList taskList) throws DukeException {
         System.out.println("Here are the tasks in your list:");
@@ -106,10 +106,10 @@ public class Ui {
     }
 
     /**
-     * Shows search results for finding a keyword in the duke.task list. Displays
+     * Shows search results for finding a keyword in the task list. Displays
      * all tasks that contain the keyword.
      *
-     * @param taskList  The duke.core.TaskList where keyword is searched.
+     * @param taskList  The TaskList where keyword is searched.
      * @param keyword A string representation of the keyword.
      */
     public void showFoundResult(TaskList taskList, String keyword) throws DukeException {

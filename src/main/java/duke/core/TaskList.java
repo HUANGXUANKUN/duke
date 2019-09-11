@@ -13,14 +13,14 @@ public class TaskList {
     private ArrayList<Task> taskList;
 
     /**
-     * Constructs a new duke.core.TaskList with a default empty list.
+     * Constructs a new tTaskList with a default empty list.
      */
     public TaskList() {
         taskList = new ArrayList<>();
     }
 
     /**
-     * Constructor that takes in a ArrayList<duke.task.Task>
+     * Constructor that takes in a ArrayList<Task>
      *
      * @param taskList An existing ArrayList of tasks.
      */
@@ -38,10 +38,10 @@ public class TaskList {
     }
 
     /**
-     * A getter. To return duke.task from taskList with given index
+     * A getter. To return task from taskList with given index
      *
-     * @param An integer representing the index of the duke.task.Task .
-     * @return The duke.task.Task in the list with this specific index.
+     * @param i is an integer representing the index of the task .
+     * @return The Task in the list with this specific index.
      */
     public Task getTask(int i) throws DukeException {
         if ((i) >= taskList.size()){
@@ -51,18 +51,18 @@ public class TaskList {
     }
 
     /**
-     * An Adder. To add the argument duke.task.Task to the taskList.
+     * An Adder. To add the argument Task to the taskList.
      *
-     * @param t The duke.task.Task to be added to the list.
+     * @param t The Task to be added to the list.
      */
     public void addTask(Task t) {
         taskList.add(t);
     }
 
     /**
-     * A remover. Delete the duke.task with the given index from the taskList
+     * A remover. Delete the task with the given index from the taskList
      *
-     * @param i integer representing the index of the duke.task to be removed.
+     * @param i integer representing the index of the task to be removed.
      */
     public void removeTask(int i) {
         taskList.remove(i);

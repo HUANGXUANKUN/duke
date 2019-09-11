@@ -7,15 +7,15 @@ import duke.core.Ui;
 import duke.task.Task;
 
 /**
- * Represents a duke.command to add a duke.task.
+ * Represents a command to add a task.
  */
 public class AddCommand extends Command {
     private Task task;
 
     /**
-     * Constructer of duke.command.AddCommand class
+     * Constructer of command.AddCommand class
      *
-     * @param task Specifies the duke.task to be added.
+     * @param task Specifies the task to be added.
      */
     public AddCommand(Task task) {
         super();
@@ -23,7 +23,7 @@ public class AddCommand extends Command {
     }
 
     /**
-     * Indicates whether this duke.command tells duke.Duke to exit.
+     * Indicates whether this command tells Duke to exit.
      *
      * @return A boolean value false.
      */
@@ -33,13 +33,13 @@ public class AddCommand extends Command {
     }
 
     /**
-     * Executes the duke.command with respect to tasks
+     * Executes the command with respect to tasks
      *
      * @param tasklist The Tasklist containing tasks
-     * @param ui       The duke.Duke UI system interacting with user
-     * @param storage  The duke.core.Storage handles read/write of data from hard disk
+     * @param ui       The Duke UI system interacting with user
+     * @param storage  The Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the
-     *                       duke.command.
+     *                       command.
      */
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeException {

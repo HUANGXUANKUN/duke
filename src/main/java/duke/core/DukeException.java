@@ -1,7 +1,7 @@
 package duke.core;
 
 /**
- * Exception that is related to duke.Duke
+ * Exception that is related to Duke
  */
 public class DukeException extends Exception {
     /**

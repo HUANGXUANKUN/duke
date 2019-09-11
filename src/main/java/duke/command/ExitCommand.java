@@ -6,7 +6,7 @@ import duke.core.TaskList;
 import duke.core.Ui;
 
 /**
- * Represents a duke.command to exit duke.Duke.
+ * Represents a command to exit Duke.
  */
 public class ExitCommand extends Command {
     public ExitCommand() {
@@ -14,7 +14,7 @@ public class ExitCommand extends Command {
     }
 
     /**
-     * Indicates whether this duke.command tells duke.Duke to exit.
+     * Indicates whether this command tells Duke to exit.
      *
      * @return A boolean value true.
      */
@@ -24,11 +24,11 @@ public class ExitCommand extends Command {
     }
 
     /**
-     * Executes the duke.command with respect to tasks
+     * Executes the command with respect to tasks
      *
      * @param taskList containing tasks
-     * @param ui The duke.Duke UI system interacts with user
-     * @param storage The duke.core.Storage handles read/write of data from hard disk
+     * @param ui The Duke UI system interacts with user
+     * @param storage The Storage handles read/write of data from hard disk
      */
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) {

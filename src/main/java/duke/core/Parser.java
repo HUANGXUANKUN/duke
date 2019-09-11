@@ -9,7 +9,7 @@ import duke.task.Todo;
 import java.util.Arrays;
 
 /**
- * It parses user duke.command into a duke.Duke's understandable commands
+ * It parses user command into a Duke's understandable commands
  */
 public class Parser {
 
@@ -28,10 +28,10 @@ public class Parser {
     }
 
     /**
-     * Parses a duke.task.Task from a duke.command string
+     * Parses a Task from a command string
      *
      * @param s The string array to be parsed.
-     * @return The duke.task.Task that is parsed from the string array.
+     * @return The task that is parsed from the string array.
      */
     private static Task parseTask(String s) {
         String[] textArr = s.split(" ", 2);
@@ -55,7 +55,7 @@ public class Parser {
      * Checks for illegal user input and throws exceptions accordingly.
      *
      * @param words The string array to be checked.
-     * @throws DukeException duke.Duke specificed Exception describing the error
+     * @throws DukeException Duke specificed Exception describing the error
      */
     private static void checkValidity(String[] words) throws DukeException {
         String firstWord = words[0];
@@ -64,13 +64,13 @@ public class Parser {
             throw new DukeException("I'm sorry, but I don't know what that means :-(");
         }
 
-        // Check if duke.task description is empty
+        // Check if task description is empty
         if ((firstWord.equals("todo") || firstWord.equals("done") || firstWord.equals("delete") || firstWord.equals("find")) && words.length < 2) {
             System.out.println("wordlength = " + words.length);
-            throw new DukeException("The description of the duke.command " + firstWord + " is empty.");
+            throw new DukeException("The description of the command " + firstWord + " is empty.");
         }
 
-        // Check if tasks duke.task.Deadline or duke.task.Event contains keyword of date and time
+        // Check if tasks Deadline or Event contains keyword of date and time
         if ((firstWord.equals("deadline") && !findKeyword(words, "/by"))
                 || (firstWord.equals("event") && !findKeyword(words, "/at"))) {
             throw new DukeException("The date/time of a " + firstWord + " is not provided.");
@@ -78,12 +78,12 @@ public class Parser {
     }
 
     /**
-     * Parses a user duke.command into a duke.Duke's understandable duke.command type
+     * Parses a user command into a Duke's understandable command type
      *
-     * @param s The string represents user duke.command.
-     * @return A duke.command.Command that represents the type of duke.command to be executed
+     * @param s The string represents user command.
+     * @return A command.Command that represents the type of command to be executed
      *
-     * @throws DukeException duke.Duke-specified Exception describing the error
+     * @throws DukeException Duke-specified Exception describing the error
      */
     public static Command parse(String s) throws DukeException {
         s = s.trim();

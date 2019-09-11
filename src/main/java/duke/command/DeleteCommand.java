@@ -7,16 +7,16 @@ import duke.core.Ui;
 import duke.task.Task;
 
 /**
- * Represents a duke.command to delete a duke.task.
+ * Represents a command to delete a task.
  */
 public class DeleteCommand extends Command {
-    /** The index of the duke.task to be deleted, as specified by this duke.command. */
+    /** The index of the task to be deleted, as specified by this command. */
     private int Id;
 
     /**
-     * Constructs a duke.command.DeleteCommand object.
+     * Constructs a DeleteCommand object.
      *
-     * @param Id Specifies the index of the duke.task to be deleted.
+     * @param Id Specifies the index of the task to be deleted.
      */
     public DeleteCommand(int Id) {
         super();
@@ -24,7 +24,7 @@ public class DeleteCommand extends Command {
     }
 
     /**
-     * Indicates whether this duke.command tells duke.Duke to exit.
+     * Indicates whether this command tells Duke to exit.
      *
      * @return A boolean value false.
      */
@@ -34,13 +34,13 @@ public class DeleteCommand extends Command {
     }
 
     /**
-     * Executes the duke.command with respect to tasks
+     * Executes the command with respect to tasks
      *
      * @param taskList container for tasks
-     * @param ui The duke.Duke UI system interacting with user
-     * @param storage The duke.core.Storage handles read/write of data from hard disk
+     * @param ui The Duke UI system interacting with user
+     * @param storage The Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the
-     *      duke.command.
+     *      command.
      */
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeException {

@@ -66,10 +66,10 @@ public abstract class Task {
     }
 
     /**
-     * Turn the info of the duke.task in proper format to be written in local
+     * Turn the info of the task in proper format to be written in local
      * Implemented differently in sub-class Deadline, Todo and Event
      *
-     * @return A string that contains info of a duke.task.
+     * @return A string that contains info of a task.
      */
     public abstract String getFormat();
 }

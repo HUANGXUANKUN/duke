@@ -6,7 +6,7 @@ import duke.core.TaskList;
 import duke.core.Ui;
 
 /**
- * Represents a duke.command to find if any duke.task with specific
+ * Represents a command to find if any task with specific
  * keyword exists in the taskList.
  */
 public class FindCommand extends Command {
@@ -14,8 +14,8 @@ public class FindCommand extends Command {
     private String keyword;
 
     /**
-     * Constructor of a duke.command.FindCommand class. Take in a keyword to find
-     * if the duke.task exists in the taskList.
+     * Constructor of a FindCommand class. Take in a keyword to find
+     * if the task exists in the taskList.
      *
      * @param keyword Specifies the keyword for searching.
      */
@@ -25,7 +25,7 @@ public class FindCommand extends Command {
     }
 
     /**
-     * Indicates whether this duke.command tells duke.Duke to exit.
+     * Indicates whether this command tells Duke to exit.
      *
      * @return A boolean value false.
      */
@@ -35,13 +35,13 @@ public class FindCommand extends Command {
     }
 
     /**
-     * Executes the duke.command with respect to tasks
+     * Executes the command with respect to tasks
      *
-     * @param taskList The Tasklist containing tasks.
-     * @param ui The duke.Duke UI system interacting with user.
-     * @param storage The duke.core.Storage handles read/write of data from hard disk.
+     * @param taskList The tasklist containing tasks.
+     * @param ui The Duke UI system interacting with user.
+     * @param storage The Storage handles read/write of data from hard disk.
      * @throws DukeException If an exception occurs during execution of the
-     *      duke.command.
+     *      command.
      */
     @Override
     public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeException {
