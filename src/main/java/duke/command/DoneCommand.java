@@ -14,10 +14,10 @@ public class DoneCommand extends Command {
     private int Id;
 
     /**
-     * Constructer of duke.command.DoneCommand class. Use to mark the duke.task with specific
+     * Constructor of duke.command.DoneCommand class. Use to mark the duke.task with specific
      * id in the list to done.
      *
-     * @param taskId Specifies the index of the duke.task to be marked as done.
+     * @param Id Specifies the index of the duke.task to be marked as done.
      */
     public DoneCommand(int Id) {
         super();
@@ -37,7 +37,7 @@ public class DoneCommand extends Command {
     /**
      * Executes the duke.command with respect to tasks
      *
-     * @param tasklist The Tasklist containing tasks
+     * @param taskList Container for tasks
      * @param ui The duke.Duke UI system interacting with user
      * @param storage The duke.core.Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the

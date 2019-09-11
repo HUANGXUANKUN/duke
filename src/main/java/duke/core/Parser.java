@@ -55,7 +55,7 @@ public class Parser {
      * Checks for illegal user input and throws exceptions accordingly.
      *
      * @param words The string array to be checked.
-     * @throws A duke.Duke specificed Exception describing the error
+     * @throws DukeException duke.Duke specificed Exception describing the error
      */
     private static void checkValidity(String[] words) throws DukeException {
         String firstWord = words[0];
@@ -75,8 +75,6 @@ public class Parser {
                 || (firstWord.equals("event") && !findKeyword(words, "/at"))) {
             throw new DukeException("The date/time of a " + firstWord + " is not provided.");
         }
-
-
     }
 
     /**
@@ -88,6 +86,7 @@ public class Parser {
      * @throws DukeException duke.Duke-specified Exception describing the error
      */
     public static Command parse(String s) throws DukeException {
+        s = s.trim();
         String[] words = s.split(" ");
         checkValidity(words);
         switch (words[0]) {

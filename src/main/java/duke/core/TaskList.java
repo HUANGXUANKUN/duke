@@ -43,7 +43,10 @@ public class TaskList {
      * @param An integer representing the index of the duke.task.Task .
      * @return The duke.task.Task in the list with this specific index.
      */
-    public Task getTask(int i) {
+    public Task getTask(int i) throws DukeException {
+        if ((i) >= taskList.size()){
+            throw new DukeException("Task number " + (i+1) + " does not exist");
+        }
         return taskList.get(i);
     }
 
@@ -59,7 +62,7 @@ public class TaskList {
     /**
      * A remover. Delete the duke.task with the given index from the taskList
      *
-     * @param An integer representing the index of the duke.task to be removed.
+     * @param i integer representing the index of the duke.task to be removed.
      */
     public void removeTask(int i) {
         taskList.remove(i);

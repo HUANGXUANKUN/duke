@@ -1,5 +1,7 @@
 package duke.task;
 
+import duke.core.DukeException;
+
 public abstract class Task {
 
     private String description;
@@ -14,7 +16,10 @@ public abstract class Task {
         return isDone;
     }
 
-    public void markAsDone(){
+    public void markAsDone() throws DukeException {
+        if (this.isDone){
+            throw new DukeException("This task is already done");
+        }
         isDone = true;
     }
 

@@ -98,7 +98,7 @@ public class Ui {
      *
      * @param taskList The duke.core.TaskList that contains all the tasks
      */
-    public void showTaskList(TaskList taskList) {
+    public void showTaskList(TaskList taskList) throws DukeException {
         System.out.println("Here are the tasks in your list:");
         for (int i = 0; i < taskList.getSize(); i++) {
             System.out.println((i + 1) + ". " + taskList.getTask(i));
@@ -112,7 +112,7 @@ public class Ui {
      * @param taskList  The duke.core.TaskList where keyword is searched.
      * @param keyword A string representation of the keyword.
      */
-    public void showFoundResult(TaskList taskList, String keyword) {
+    public void showFoundResult(TaskList taskList, String keyword) throws DukeException {
         System.out.println("Here are the matching tasks in your list:");
         int i = 0, j = 0;
         for (; i < taskList.getSize(); i++) {
