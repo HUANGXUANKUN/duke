@@ -1,17 +1,17 @@
 There is a loading error
 Hello from I'm Duke
 What can I do for you?
-_____________________________________________________
-Here are the tasks in your list:
-_____________________________________________________
-_____________________________________________________
-OOPS!!! I'm sorry, but I don't know what that means :-(
-_____________________________________________________
+Got it. I've added this task: 
+[T][N] read book
+Now you have 1 tasks in the list.
+Fail to save tasks to hard disk
 _____________________________________________________
 OOPS!!! I'm sorry, but I don't know what that means :-(
 _____________________________________________________
-_____________________________________________________
 OOPS!!! I'm sorry, but I don't know what that means :-(
 _____________________________________________________
+Fail to save tasks to hard disk
+Nice! I've marked this task as done: 
+  [T][Y] read book
 _____________________________________________________
 _____________________________________________________

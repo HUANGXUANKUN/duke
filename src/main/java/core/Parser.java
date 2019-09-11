@@ -61,19 +61,19 @@ public class Parser {
         String firstWord = words[0];
         if (!(firstWord.equals("done") || firstWord.equals("todo") || firstWord.equals("deadline") || firstWord.equals("event")
                 || firstWord.equals("delete") || firstWord.equals("list") || firstWord.equals("bye") || firstWord.equals("find"))) {
-            throw new DukeException("OOPS!!! I'm sorry, but I don't know what that means :-(");
+            throw new DukeException("I'm sorry, but I don't know what that means :-(");
         }
 
         // Check if task description is empty
         if ((firstWord.equals("todo") || firstWord.equals("done") || firstWord.equals("delete") || firstWord.equals("find")) && words.length < 2) {
             System.out.println("wordlength = " + words.length);
-            throw new DukeException("OOPS!!! The description of the command " + firstWord + " is empty.");
+            throw new DukeException("The description of the command " + firstWord + " is empty.");
         }
 
         // Check if tasks task.Deadline or task.Event contains keyword of date and time
         if ((firstWord.equals("deadline") && !findKeyword(words, "/by"))
                 || (firstWord.equals("event") && !findKeyword(words, "/at"))) {
-            throw new DukeException("OOPS!!! The date/time of a " + firstWord + " is not provided.");
+            throw new DukeException("The date/time of a " + firstWord + " is not provided.");
         }
 
 
