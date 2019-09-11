@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ParserTest {
+    /**
+     * Test the return command type for Parser.parse(userInput)
+     * @throws DukeException
+     */
     @Test
     public void commandTypeTest() throws DukeException {
         Command c1 = Parser.parse("bye");
