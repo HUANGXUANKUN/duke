@@ -53,7 +53,7 @@ public class DeadlineTest {
         // Mark the deadline as done and check its toString() and getFormat()
         deadline.markAsDone();
         assertTrue(deadline.isDone(), "The deadline should be marked as done");
-        assertEquals("[D][Y] deadlineTest (by: 2nd of December 1996 , 12PM)", deadline.toString(), "The deadline.toString() is not expected");
+        assertEquals("[D][Y] deadlineTest (by: 2nd of December 1996, 12PM)", deadline.toString(), "The deadline.toString() is not expected");
         assertEquals( "D | 1 | deadlineTest | 02/12/1996 1235",deadline.getFormat(), "The writeToFile format is not expected");
     }
 }
