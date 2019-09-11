@@ -2,23 +2,23 @@ package duke.task;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TodoTest {
-    @Test
-    public void todoStringTest(){
-        assertEquals(new Todo("todoTest").toString(), "[T][N] todoTest", "todo string test fails");
-    }
 
     @Test
-    public void writeFormatTest() {
-        assertEquals( "T | 0 | todoTest",new Todo("todoTest").getFormat(), "The writeToFile format is not expected");
-    }
+    public void todoTest1(){
+        // Creata a new task and check its toString() and getFormat()
+        Todo todo = new Todo("todoTest");
+        assertFalse(todo.isDone(), "The newly created Deadline should not be done");
+        assertEquals( "[T][N] todoTest",todo.toString(), "The writeToFile format is not expected");
+        assertEquals( "T | 0 | todoTest",todo.getFormat(), "The writeToFile format is not expected");
 
-    @Test
-    public void doneStatusTest() {
-        assertFalse(new Todo("abc").isDone(), "The newly created Deadline should not be done");
+        // Mark the task as done and check its toString() and getFormat()
+        todo.markAsDone();
+        assertTrue(todo.isDone(), "The todo should be marked as done");
+        assertEquals("[T][Y] todoTest", todo.toString(), "The todo.toString() is not expected");
+        assertEquals( "T | 1 | todoTest",todo.getFormat(), "The writeToFile format is not expected");
     }
 }
