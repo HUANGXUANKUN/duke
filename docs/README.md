@@ -46,9 +46,10 @@ Example of usage:
 
 Expected outcome:
 
-#1 [T][N] Homework
+1. [T][N] Homework
 
-#2 [D][N] Project (by: 2nd of December 2019, 12PM)
+2. [D][N] Project (by: 2nd of December 2019, 12PM)
 
-#3 [E][N] Meeting (at: 2nd of December 2019, 12PM)
+3. [E][N] Meeting (at: 2nd of December 2019, 12PM)
+_____________________________________________________
 
