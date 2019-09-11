@@ -1,32 +1,34 @@
 Hello from I'm duke.Duke
 What can I do for you?
-Reading duke.task.duke.task List ...
-Data and Time are not in dd/MM/yyyy HHmm format
-Data and Time are not in dd/MM/yyyy HHmm format
-Data and Time are not in dd/MM/yyyy HHmm format
+Reading task List ...
 Loading of duke.task list is completed
+_____________________________________________________
 Here are the tasks in your list:
 1. [T][✘] book review
 2. [D][✓] send Email (by: weekend)
 3. [E][✓] return books (at: tomorrow 5pm)
 4. [E][✘] Project Meeting (at: Thursday 2pm)
 5. [D][✘] Do Homework (by: 28-08-2019 23:59)
+_____________________________________________________
 Got it. I've added this duke.task:
 [T][✘] read book
 Now you have 6 tasks in the list.
-Data and Time are not in dd/MM/yyyy HHmm format
+_____________________________________________________
 Got it. I've added this duke.task:
 [D][✘] submit coding homework (by: 12/08/2019 13:30)
 Now you have 7 tasks in the list.
-Data and Time are not in dd/MM/yyyy HHmm format
+_____________________________________________________
 Got it. I've added this duke.task: /at tomorrow
 [E][✘] Dating with girl friend (at: tomorrow)
 Now you have 8 tasks in the list.
+_____________________________________________________
 Nice! I've marked this duke.task as done:
 [T][✓] book review
 Nice! I've marked this duke.task as done:
 [D][✓] Do Homework (by: 28-08-2019 23:59)
+_____________________________________________________
 ☹ OOPS!!! I'm sorry, but I don't know what that means :-(
+_____________________________________________________
 Here are the tasks in your list:
 1. [T][✓] book review
 2. [D][✓] send Email (by: weekend)
@@ -36,6 +38,7 @@ Here are the tasks in your list:
 6. [T][✘] read book
 7. [D][✘] submit coding homework (by: 12/08/2019 13:30)
 8. [E][✘] Dating with girl friend (at: tomorrow)
+_____________________________________________________
 Bye. Hope to see you again soon!
 
 
