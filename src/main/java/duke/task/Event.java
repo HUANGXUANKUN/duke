@@ -1,6 +1,9 @@
 package duke.task;
 import duke.core.DateFormatter;
 
+/**
+ * Extends from Task, represents a Event task which required description and Date/Time info
+ */
 public class Event extends Task {
 
     private String date;

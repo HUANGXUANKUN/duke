@@ -2,6 +2,9 @@ package duke.task;
 
 import duke.core.DukeException;
 
+/**
+ * An abstract class to be extended into Deadline, Todo and Event classes
+ */
 public abstract class Task {
 
     private String description;

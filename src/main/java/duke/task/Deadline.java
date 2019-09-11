@@ -1,6 +1,9 @@
 package duke.task;
 import duke.core.DateFormatter;
 
+/**
+ * Extends from Task, represents a Deadline task which required description and Date/Time info
+ */
 public class Deadline extends Task {
 
     private String date;
