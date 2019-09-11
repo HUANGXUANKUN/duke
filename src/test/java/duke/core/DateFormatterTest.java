@@ -19,9 +19,4 @@ public class DateFormatterTest {
         assertEquals("1/01/2000 1035", DateFormatter.convertToDateAndTime("1/01/2000 1035"), "The date format should be invalid");
         assertEquals("01/01/2000 2500", DateFormatter.convertToDateAndTime("01/01/2000 2500"), "Invalid time is given");
     }
-
-
-
-
-
 }

@@ -1,5 +1,6 @@
 package duke.task;
 
+import duke.core.DukeException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +23,7 @@ public class TodoTest {
     }
 
     @Test
-    public void todoTestCase(){
+    public void todoTestCase() throws DukeException {
         // Creata a new task and check its toString() and getFormat()
         Todo todo = new Todo("todoTest");
         assertFalse(todo.isDone(), "The newly created todo should not be done");

@@ -1,5 +1,6 @@
 package duke.task;
 
+import duke.core.DukeException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +23,7 @@ public class DeadlineTest {
     }
 
     @Test
-    public void deadlineTestCase(){
+    public void deadlineTestCase() throws DukeException {
         // Creata a new deadline and check its toString() and getFormat()
         Deadline deadline = new Deadline("deadlineTest", "02/12/1996 1235");
         assertFalse(deadline.isDone(), "The newly created deadline should not be done");

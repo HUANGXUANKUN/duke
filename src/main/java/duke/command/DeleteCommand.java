@@ -10,11 +10,11 @@ import duke.task.Task;
  * Represents a duke.command to delete a duke.task.
  */
 public class DeleteCommand extends Command {
-    /** The index of the duke.task to be deleted, as specifed by this duke.command. */
+    /** The index of the duke.task to be deleted, as specified by this duke.command. */
     private int Id;
 
     /**
-     * Constructs a <code>duke.command.DeleteCommand</code> object.
+     * Constructs a duke.command.DeleteCommand object.
      *
      * @param Id Specifies the index of the duke.task to be deleted.
      */
@@ -36,7 +36,7 @@ public class DeleteCommand extends Command {
     /**
      * Executes the duke.command with respect to tasks
      *
-     * @param taskList The Tasklist containing tasks
+     * @param taskList container for tasks
      * @param ui The duke.Duke UI system interacting with user
      * @param storage The duke.core.Storage handles read/write of data from hard disk
      * @throws DukeException If an exception occurs during execution of the

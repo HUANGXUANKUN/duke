@@ -1,5 +1,6 @@
 package duke.task;
 
+import duke.core.DukeException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +23,7 @@ public class EventTest {
     }
 
     @Test
-    public void eventTestCase(){
+    public void eventTestCase() throws DukeException {
         // Creata a new event and check its toString() and getFormat()
         Event event = new Event("eventTest", "02/12/1996 1235");
         assertFalse(event.isDone(), "The newly created event should not be done");
