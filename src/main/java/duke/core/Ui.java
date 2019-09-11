@@ -57,7 +57,7 @@ public class Ui {
      * @param size The number of tasks stored in the <code>duke.core.TaskList</code>.
      */
     public void showTaskAdded(Task t, int taskListSize) {
-        System.out.println("Got it. I've added this duke.task: ");
+        System.out.println("Got it. I've added this task: ");
         System.out.println(t);
         System.out.println("Now you have " + taskListSize + " tasks in the list.");
     }
@@ -88,7 +88,7 @@ public class Ui {
      *                     removed from.
      */
     public void showRemovedTask(Task t, int taskListSize) {
-        System.out.println("Noted. I've removed this duke.task:");
+        System.out.println("Noted. I've removed this task:");
         System.out.println(t);
         System.out.println("Now you have " + taskListSize + " tasks in the list.");
     }
