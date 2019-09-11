@@ -12,3 +12,10 @@ src/main/resources/docs/
 .DS_Store
 *.iml
 bin/
+gradlew.bat
+gradlew
+gradle/wrapper/gradle-wrapper.properties
+build.gradle
+README.md
+gradle/wrapper/gradle-wrapper.jar
+text-ui-test/runtest.sh

@@ -1,7 +1,7 @@
 There is a loading error
-Hello from I'm Duke
+Hello from I'm duke.Duke
 What can I do for you?
-Got it. I've added this task: 
+Got it. I've added this duke.task:
 [T][N] read book
 Now you have 1 tasks in the list.
 Fail to save tasks to hard disk
@@ -11,7 +11,7 @@ _____________________________________________________
 OOPS!!! I'm sorry, but I don't know what that means :-(
 _____________________________________________________
 Fail to save tasks to hard disk
-Nice! I've marked this task as done: 
+Nice! I've marked this duke.task as done:
   [T][Y] read book
 _____________________________________________________
 _____________________________________________________
